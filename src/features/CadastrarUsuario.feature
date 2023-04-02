@@ -27,7 +27,7 @@
           | os campos Nome, Login e Senha   | são obrigatórios |
 
      Esquema do Cenário: Os campos Nome e Nome da mãe devem conter 256 caracteres no máximo
-       Dado que o usuário não preencheu o <campo> com nenhum ou ultrapassou 256 caracteres
+       Dado que o usuário não preencheu o <campo> com nenhum caracter ou ultrapassou 256 caracteres
        Quando clicar em Salvar
        Então deve apresentar uma mensagem que o <campo> <mensagem>
        Exemplos:
