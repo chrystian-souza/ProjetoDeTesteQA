@@ -21,9 +21,12 @@ public class Componentes {
 
     }
 
+    public void clicarEnter() {
+        driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
+    }
+
     public void pesquisarGoogle() {
         driver.findElement(By.name("q")).sendKeys("SENAC Palhoça");
-        driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
 
     }
 
@@ -31,5 +34,11 @@ public class Componentes {
         driver.findElement(By.id("res")).isDisplayed();
         Assert.assertTrue(driver.getTitle().contains("SENAC"));
     }
+
+    public void fecharPesquisa() {
+        driver.quit();
+    }
+
+
 
 }

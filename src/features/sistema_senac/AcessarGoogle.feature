@@ -7,5 +7,6 @@
       @basico
       Cenário: Acessar Google
       Dado que o uduário digitou o endereço do Google no navegador
+      E que o usuário digitou SENAC Palhoça
       Quando clicar em Entrar
-      Então a página do Google deve abrir
+      Então deve apresentar a lista de pesquisa com SENAC Palhoça
