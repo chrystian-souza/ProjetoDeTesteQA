@@ -1,4 +1,4 @@
-package util;
+package util;                                /* toda a lógica é feita aqui!*/
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -13,6 +13,9 @@ public class Componentes {
                 + "/Driver/chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", chromedriver);
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        driver.get("file:///" + System.getProperty("user.dir") + "/Driver/componentes.html");
 
     }
 
@@ -39,6 +42,14 @@ public class Componentes {
         driver.quit();
     }
 
+
+    public void testarTextField() {
+        driver.findElement(By.id("elementosForm:nome")).sendKeys("Batatinha");
+    }
+
+    public void validarTextField() {
+        Assert.assertEquals("Batatinha", driver.findElement(By.id("elementosForm:nome")).getAttribute("value"));
+    }
 
 
 }
