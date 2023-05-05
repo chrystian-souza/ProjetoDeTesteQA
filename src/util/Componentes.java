@@ -51,5 +51,14 @@ public class Componentes {
         Assert.assertEquals("Batatinha", driver.findElement(By.id("elementosForm:nome")).getAttribute("value"));
     }
 
+    public void testarSobrenome() {
+        driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("Frita");
+    }
+
+    public void validarSobrenome() {
+        Assert.assertEquals("Frita", driver.findElement(By.id("elementosForm:sobrenome")).getAttribute("value"));
+    }
+
+
 
 }

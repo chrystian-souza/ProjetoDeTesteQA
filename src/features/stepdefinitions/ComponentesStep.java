@@ -27,5 +27,16 @@ public class ComponentesStep {
 
     }
 
+    @Quando("o usuário digitar Frita")
+    public void o_usuário_digitar_Frita() {
+       componentes.testarSobrenome();
+    }
+
+    @Então("no campo sobrenome deve apresentar a palavra Frita")
+    public void no_campo_sobrenome_deve_apresentar_a_palavra_Frita() {
+       componentes.validarSobrenome();
+
+    }
+
 
 }

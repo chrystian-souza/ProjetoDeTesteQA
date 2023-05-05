@@ -8,3 +8,7 @@ Funcionalidade: Acessar vários componentes html
   Cenário: Validar campo textfield
     Quando o usuário digitar Batatinha
     Então  no campo textfield deve apresentar a palavra Batatinha
+
+  Cenário: Validar campo sobrenome
+    Quando o usuário digitar Frita
+    Então no campo sobrenome deve apresentar a palavra Frita
