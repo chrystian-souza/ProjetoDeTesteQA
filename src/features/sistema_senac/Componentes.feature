@@ -15,14 +15,31 @@ Funcionalidade: Acessar vários componentes html
       | Frita      | sobrenome  | Frita      |
       | Batatinhaa | sugestoes  | Batatinhaa |
 
-  @validar_elemento_checkbox_radioButton
-  Esquema do Cenário: Validar campo  checkbox
-    Quando o usuário digitar <elemento>
-    Então no campo <elemento> deve apresentar selecionado
+  @validar_elemento_radio_button_checkbox
+  Esquema do Cenário: Validar campo checkbox e radioButton
+    Quando o usuário clicar no elemento <clicar>
+    Então o elemento <elemento> deve aparecer selecionado
     Exemplos:
-      | elemento |
-      | radioButton |
-      |  checkbox  |
+      | clicar       | elemento     |
+      | rádio button | rádio button |
+      | checkbox     | checkbox     |
+
+  @Validar_Varios_Campos
+  Esquema do Cenario:  Validar campo nome, sobrenome, sexo, comida preferida, escolaridade, esporte, sugestão
+    Quando o usuário digitar ou selecionar <campo>
+    Então no campo <componente> deve apresentar o <resultado>
+    Exemplos:
+      | campo             | componente | resultado  |
+      | Chrystian         | textfield  | Batatinha  |
+      | Souza             | sobrenome  | Souza      |
+      | Aula legal        | textarea   | Aula legal |
+      | sexo              | radio      | radio      |
+      | comida preferida  | checkbox   | checkbox   |
+      | escolaridade      | select     | select     |
+      | esporte           | select     | select     |
+
+
+
 
 
 

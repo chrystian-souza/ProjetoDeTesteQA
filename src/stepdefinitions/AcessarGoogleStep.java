@@ -1,4 +1,4 @@
-package features.stepdefinitions;
+package stepdefinitions;
 
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
