@@ -162,5 +162,6 @@
         <jarDirectory url="jar://$USER_HOME$/Bibliotecas_2021_1/selenium-java-3.14.0-sources.jar!/" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Bibliotecas_2021_1" level="project" />
   </component>
 </module>
