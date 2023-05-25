@@ -1,13 +1,18 @@
 package stepdefinitions.TrabalhoFinalStep;
 
+
 package stepdefinitions;
 
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
+import util.Componentes;
 
 
 public class Componente02Step {
+
+    Componentes componentes = new Componentes();
+
 
     @Dado("que o usuário acessou o arquivo Campo de treinamento")
     public void que_o_usuário_acessou_o_arquivo_Campo_de_treinamento() {
@@ -16,9 +21,8 @@ public class Componente02Step {
 
 
     @Quando("o usuário digitar ou selecionar Chrystian")
-    public void o_usuário_digitar_ou_selecionar_Chrystian() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+    public void o_usuário_digitar_ou_selecionar_Chrystian() { componentes.testarCheckbox();
+
     }
 
     @Então("no campo textfield deve apresentar o Batatinha")
@@ -92,3 +96,5 @@ public class Componente02Step {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
+
+}

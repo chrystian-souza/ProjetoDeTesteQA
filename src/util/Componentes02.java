@@ -5,8 +5,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 public class Componentes02 {
 
+    private WebDriver driver;
+
+    public void inicializar() {
+        String chromedriver = System.getProperty("user.dir")
+                + "/Driver/chromedriver.exe";
+        System.setProperty("webdriver.chrome.driver", chromedriver);
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        driver.get("file:///" + System.getProperty("user.dir") + "/Driver/componentes.html");
+
+    }
 
 
     public void testarTextField() {
