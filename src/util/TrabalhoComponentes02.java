@@ -2,17 +2,19 @@ package util;                                /* toda a lógica é feita aqui!*/
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
-public class Componentes02 {
+
+public class TrabalhoComponentes02 {
 
     private WebDriver driver;
+    private Select select;
 
     public void inicializar() {
-        String chromedriver = System.getProperty("user.dir")
-                + "/Driver/chromedriver.exe";
+        String chromedriver = System.getProperty("user.dir") + "/Driver/chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", chromedriver);
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -31,7 +33,7 @@ public class Componentes02 {
     }
 
     public void testarSobrenome() {
-        driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("Frita");
+        driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("Souza");
     }
 
     public void validarSobrenome() {
@@ -39,11 +41,11 @@ public class Componentes02 {
     }
 
     public void testarSugestoes() {
-        driver.findElement(By.id("elementosForm:sugestoes")).sendKeys("Batatinhaa");
+        driver.findElement(By.id("elementosForm:sugestoes")).sendKeys("Aula legal");
     }
 
     public void validarSugestoes() {
-        Assert.assertEquals("Batatinhaa", driver.findElement(By.id("elementosForm:sugestoes")).getAttribute("value"));
+        Assert.assertEquals("Aula legal", driver.findElement(By.id("elementosForm:sugestoes")).getAttribute("value"));
     }
 
     public void testarRadioButton() {
@@ -62,5 +64,34 @@ public class Componentes02 {
     public void validarCheckbox() {
         Assert.assertTrue(driver.findElement(By.id("elementosForm:comidaFavorita:0")).isSelected());
     }
+
+    public void testarEscolaridade(String opcao_escolaridade) {
+        WebElement escolaridade = driver.findElement(By.id("elementosForm:comidaFavorita"));
+        Select select = new Select(escolaridade);
+        select.selectByVisibleText(opcao_escolaridade);
+
+    }
+
+    public void validarEscolaridade(String opcao_escolaridade) {
+
+
+        WebElement campo_escolaridade = driver.findElement(By.id("elementosForm:comidaFavorita"));
+        Select select_escolaridade = new Select(campo_escolaridade);
+
+
+    }
+
+    public void testarTextArea() {
+        driver.findElement(By.id("elementosForm:sugestoes")).sendKeys("Aula legal");
+    }
+
+    public void validarTextArea() {
+        Assert.assertEquals("Aula legal", driver.findElement(By.id("elementosForm:sugestoes")).getAttribute("value"));
+    }
+
+    public void fecharPesquisa() {
+        driver.quit();
+    }
+
 
 }
