@@ -18,7 +18,7 @@ public class TrabalhoComponentes02Step {
 
     @Dado("que o usuário esta para preencher os campos")
     public void que_o_usuario_esta_para_preencher_os_campos() {
-        
+        componentes.inicializar();
 
     }
 
@@ -36,80 +36,81 @@ public class TrabalhoComponentes02Step {
 
     @Quando("o usuário digitar no Sobrenome")
     public void o_usuário_digitar_no_Sobrenome() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        componentes.testarSobrenome();
+
     }
 
     @Então("deve apresentar o Souza")
     public void deve_apresentar_o_Souza() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+       componentes.validarSobrenome();
+       componentes.fecharPesquisa();
     }
 
     @Quando("o usuário digitar no Sugestões")
     public void o_usuário_digitar_no_Sugestões() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+       componentes.testarSugestoes();
     }
 
     @Então("deve apresentar o Nada a declarar")
     public void deve_apresentar_o_Nada_a_declarar() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+       componentes.validarSugestoes();
+       componentes.fecharPesquisa();
     }
 
     @Quando("o usuário digitar no Sexo")
     public void o_usuário_digitar_no_Sexo() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+       componentes.testarSexo();
     }
 
     @Então("deve apresentar o radio")
     public void deve_apresentar_o_radio() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        componentes.validarSexo();
+        componentes.fecharPesquisa();
     }
 
     @Quando("o usuário digitar no Comida preferida")
     public void o_usuário_digitar_no_Comida_preferida() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+      componentes.testarComidaFavorita();
     }
 
     @Então("deve apresentar o checkbox")
     public void deve_apresentar_o_checkbox() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        componentes.validarComidaFavorita();
+        componentes.fecharPesquisa();
     }
 
     @Quando("o usuário digitar no Escolaridade")
     public void o_usuário_digitar_no_Escolaridade() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+       componentes.testarEscolaridade();
     }
 
     @Então("deve apresentar o select")
     public void deve_apresentar_o_select() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+       componentes.validarEscolaridade();
+       componentes.fecharPesquisa();
     }
 
     @Quando("o usuário digitar no Esporte")
     public void o_usuário_digitar_no_Esporte() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+      componentes.testarEsporte();
+    }
+    @Então("deve apresentar select")
+    public void deve_apresentar_select() {
+        componentes.validarEsporte();
+        componentes.fecharPesquisa();
     }
 
     @Quando("o usuário digitar no Cadastrar")
     public void o_usuário_digitar_no_Cadastrar() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+       componentes.testarCadastro();
+
     }
 
     @Então("deve apresentar o onclick")
     public void deve_apresentar_o_onclick() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+     componentes.validarCadastro();
+     componentes.fecharPesquisa();
+
     }
 
 

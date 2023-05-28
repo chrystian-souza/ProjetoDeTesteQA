@@ -4,8 +4,8 @@ Funcionalidade: Acessar vários componentes html
 
   Contexto:
     Dado que o usuário acessou o arquivo Campo de treinamento
-
   @validar_campo_textfield_sobrenome_sugestoes
+
   Esquema do Cenário: Validar campo textfield, sobrenome, sugestoes
     Quando o usuário digitar <campo>
     Então no campo <componente> deve apresentar a palavra <resultado>
