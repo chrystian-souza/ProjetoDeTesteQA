@@ -14,6 +14,7 @@ public class TrabalhoComponentes02 {
 
     private WebElement element;
 
+    private Select select;
 
 
     public void inicializar() {
@@ -26,6 +27,19 @@ public class TrabalhoComponentes02 {
         driver.get("file:///" + System.getProperty("user.dir") + "/Driver/componentes.html");
 
     }
+
+
+    public void validarCadastro() {
+        Assert.assertTrue(driver.findElement(By.id("elementosForm:cadastrar")).isSelected());
+        Assert.assertTrue(element.isDisplayed());
+    }
+
+    public void fecharPesquisa() {
+        driver.quit();
+
+    }
+
+
 
 
     public void testarNome() {
@@ -64,9 +78,8 @@ public class TrabalhoComponentes02 {
     }
 
     public void testarEscolaridade() {
-        Select select = new Select(element);
         element = driver.findElement(By.id("elementosForm:escolaridade"));
-        select.selectByIndex(0);
+        select.selectByValue("superior");
 
     }
 
@@ -105,15 +118,7 @@ public class TrabalhoComponentes02 {
         element.click();
     }
 
-    public void validarCadastro() {
-        Assert.assertTrue(driver.findElement(By.id("elementosForm:cadastrar")).isSelected());
-        Assert.assertTrue(element.isDisplayed());
-    }
 
-    public void fecharPesquisa() {
-        driver.quit();
-
-    }
 
 
 }

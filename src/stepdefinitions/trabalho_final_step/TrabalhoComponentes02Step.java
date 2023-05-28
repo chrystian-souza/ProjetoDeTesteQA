@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.trabalho_final_step;
 
 
 import cucumber.api.java.pt.Dado;
@@ -13,25 +13,20 @@ public class TrabalhoComponentes02Step {
 
     @Dado("que o usuário entrou na página Campo de Treinamento")
     public void que_o_usuario_entrou_na_pagina_Campo_de_Treinamento() {
-       componentes.inicializar();
-    }
-
-    @Dado("que o usuário esta para preencher os campos")
-    public void que_o_usuario_esta_para_preencher_os_campos() {
         componentes.inicializar();
-
     }
 
     @Quando("o usuário digitar no Nome")
     public void o_usuário_digitar_no_Nome() {
+        componentes.testarCadastro();
         componentes.testarNome();
 
     }
 
     @Então("deve apresentar o Chrystian")
     public void deve_apresentar_o_Chrystian() {
-      componentes.validarNome();
-      componentes.fecharPesquisa();
+        componentes.validarNome();
+        componentes.fecharPesquisa();
     }
 
     @Quando("o usuário digitar no Sobrenome")
@@ -42,24 +37,24 @@ public class TrabalhoComponentes02Step {
 
     @Então("deve apresentar o Souza")
     public void deve_apresentar_o_Souza() {
-       componentes.validarSobrenome();
-       componentes.fecharPesquisa();
+        componentes.validarSobrenome();
+        componentes.fecharPesquisa();
     }
 
     @Quando("o usuário digitar no Sugestões")
     public void o_usuário_digitar_no_Sugestões() {
-       componentes.testarSugestoes();
+        componentes.testarSugestoes();
     }
 
     @Então("deve apresentar o Nada a declarar")
     public void deve_apresentar_o_Nada_a_declarar() {
-       componentes.validarSugestoes();
-       componentes.fecharPesquisa();
+        componentes.validarSugestoes();
+        componentes.fecharPesquisa();
     }
 
     @Quando("o usuário digitar no Sexo")
     public void o_usuário_digitar_no_Sexo() {
-       componentes.testarSexo();
+        componentes.testarSexo();
     }
 
     @Então("deve apresentar o radio")
@@ -70,7 +65,7 @@ public class TrabalhoComponentes02Step {
 
     @Quando("o usuário digitar no Comida preferida")
     public void o_usuário_digitar_no_Comida_preferida() {
-      componentes.testarComidaFavorita();
+        componentes.testarComidaFavorita();
     }
 
     @Então("deve apresentar o checkbox")
@@ -81,19 +76,20 @@ public class TrabalhoComponentes02Step {
 
     @Quando("o usuário digitar no Escolaridade")
     public void o_usuário_digitar_no_Escolaridade() {
-       componentes.testarEscolaridade();
+        componentes.testarEscolaridade();
     }
 
     @Então("deve apresentar o select")
     public void deve_apresentar_o_select() {
-       componentes.validarEscolaridade();
-       componentes.fecharPesquisa();
+        componentes.validarEscolaridade();
+        componentes.fecharPesquisa();
     }
 
     @Quando("o usuário digitar no Esporte")
     public void o_usuário_digitar_no_Esporte() {
-      componentes.testarEsporte();
+        componentes.testarEsporte();
     }
+
     @Então("deve apresentar select")
     public void deve_apresentar_select() {
         componentes.validarEsporte();
@@ -102,17 +98,16 @@ public class TrabalhoComponentes02Step {
 
     @Quando("o usuário digitar no Cadastrar")
     public void o_usuário_digitar_no_Cadastrar() {
-       componentes.testarCadastro();
+        componentes.testarCadastro();
 
     }
 
     @Então("deve apresentar o onclick")
     public void deve_apresentar_o_onclick() {
-     componentes.validarCadastro();
-     componentes.fecharPesquisa();
+        componentes.validarCadastro();
+        componentes.fecharPesquisa();
 
     }
-
 
 
 }

@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.step;
 
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
