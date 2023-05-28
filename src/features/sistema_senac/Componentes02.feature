@@ -1,18 +1,28 @@
 #language:pt
 
-Funcionalidade: Acessar vários componentes html
+Funcionalidade: Fazer o cadastro de usuários
+
+  Contexto:
+    Dado que o usuário entrou na página Campo de Treinamento
 
   @Validar_Varios_Campos
-  Esquema do Cenario:  Validar campo nome, sobrenome, sexo, comida preferida, escolaridade, esporte, sugestão
-    Quando o usuário digitar ou selecionar <campo>
-    Então no campo <componente> deve apresentar o <resultado>
+  Esquema do Cenario: Apos clicar em Cadastrar deve: Validar campo nome, sobrenome, sexo, comida preferida, escolaridade, esporte, sugestão, cadastro
+    Dado que o usuário esta para preencher os campos
+    Quando o usuário digitar no <campo>
+    Então deve apresentar o <resultado>
     Exemplos:
-      | campo            | componente | resultado  |
-      | Nome             | textfield  | Chrystian  |
-      | Sobrenome        | sobrenome  | Souza      |
-      | Aula legal       | textarea   | Aula legal |
-      | Sexo             | radio      | radio      |
-      | Comida preferida | checkbox   | checkbox   |
-      | Escolaridade     | select     | select     |
-      | Esporte          | select     | select     |
+      | campo            | resultado       |
+      | Nome             | Chrystian       |
+      | Sobrenome        | Souza           |
+      | Sugestões        | Nada a declarar |
+      | Sexo             | radio           |
+      | Comida preferida | checkbox        |
+      | Escolaridade     | select          |
+      | Esporte          | select          |
+      | Cadastrar        | onclick         |
+
+
+
+
+
 

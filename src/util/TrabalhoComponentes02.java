@@ -11,10 +11,14 @@ import org.openqa.selenium.support.ui.Select;
 public class TrabalhoComponentes02 {
 
     private WebDriver driver;
-    private Select select;
+
+    private WebElement element;
+
+
 
     public void inicializar() {
-        String chromedriver = System.getProperty("user.dir") + "/Driver/chromedriver.exe";
+        String chromedriver = System.getProperty("user.dir")
+                + "/Driver/chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", chromedriver);
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -24,11 +28,12 @@ public class TrabalhoComponentes02 {
     }
 
 
-    public void testarTextField() {
+    public void testarNome() {
         driver.findElement(By.id("elementosForm:nome")).sendKeys("Chrystian");
     }
 
-    public void validarTextField() {
+    public void validarNome() {
+
         Assert.assertEquals("Chrystian", driver.findElement(By.id("elementosForm:nome")).getAttribute("value"));
     }
 
@@ -37,60 +42,77 @@ public class TrabalhoComponentes02 {
     }
 
     public void validarSobrenome() {
-        Assert.assertEquals("Frita", driver.findElement(By.id("elementosForm:sobrenome")).getAttribute("value"));
+        Assert.assertEquals("Souza", driver.findElement(By.id("elementosForm:sobrenome")).getAttribute("value"));
     }
 
-    public void testarSugestoes() {
-        driver.findElement(By.id("elementosForm:sugestoes")).sendKeys("Aula legal");
-    }
 
-    public void validarSugestoes() {
-        Assert.assertEquals("Aula legal", driver.findElement(By.id("elementosForm:sugestoes")).getAttribute("value"));
-    }
-
-    public void testarRadioButton() {
+    public void testarSexo() {
         driver.findElement(By.id("elementosForm:sexo:1")).click();
 
     }
 
-    public void validarRadioButton() {
+    public void validarSexo() {
         Assert.assertTrue(driver.findElement(By.id("elementosForm:sexo:1")).isSelected());
     }
 
-    public void testarCheckbox() {
+    public void testarComidaFavorita() {
         driver.findElement(By.id("elementosForm:comidaFavorita:0")).click();
     }
 
-    public void validarCheckbox() {
+    public void validarComidaFavorita() {
         Assert.assertTrue(driver.findElement(By.id("elementosForm:comidaFavorita:0")).isSelected());
     }
 
-    public void testarEscolaridade(String opcao_escolaridade) {
-        WebElement escolaridade = driver.findElement(By.id("elementosForm:comidaFavorita"));
-        Select select = new Select(escolaridade);
-        select.selectByVisibleText(opcao_escolaridade);
+    public void testarEscolaridade() {
+        Select select = new Select(element);
+        element = driver.findElement(By.id("elementosForm:escolaridade"));
+        select.selectByIndex(0);
 
     }
 
-    public void validarEscolaridade(String opcao_escolaridade) {
-
-
-        WebElement campo_escolaridade = driver.findElement(By.id("elementosForm:comidaFavorita"));
-        Select select_escolaridade = new Select(campo_escolaridade);
-
+    public void validarEscolaridade() {
+        Select select = new Select(element);
+        boolean isSelected = select.getFirstSelectedOption().isSelected();
+        Assert.assertTrue(isSelected);
 
     }
 
-    public void testarTextArea() {
-        driver.findElement(By.id("elementosForm:sugestoes")).sendKeys("Aula legal");
+    public void testarEsporte() {
+        Select select = new Select(element);
+        element = driver.findElement(By.id("elementosForm:esporte"));
+        select.selectByIndex(1);
+
     }
 
-    public void validarTextArea() {
-        Assert.assertEquals("Aula legal", driver.findElement(By.id("elementosForm:sugestoes")).getAttribute("value"));
+    public void validarEsporte() {
+        Select select = new Select(element);
+        boolean isSelected = select.getFirstSelectedOption().isSelected();
+        Assert.assertTrue(isSelected);
+
+    }
+
+    public void testarSugestoes() {
+        driver.findElement(By.id("elementosForm:sugestoes")).sendKeys("Nada a declarar");
+    }
+
+    public void validarSugestoes() {
+        Assert.assertEquals("Nada a declarar", driver.findElement(By.id("elementosForm:sugestoes")).getAttribute("value"));
+    }
+
+
+    public void testarCadastro() {
+        element = driver.findElement(By.id("elementosForm:cadastrar"));
+        element.click();
+    }
+
+    public void validarCadastro() {
+        Assert.assertTrue(driver.findElement(By.id("elementosForm:cadastrar")).isSelected());
+        Assert.assertTrue(element.isDisplayed());
     }
 
     public void fecharPesquisa() {
         driver.quit();
+
     }
 
 
