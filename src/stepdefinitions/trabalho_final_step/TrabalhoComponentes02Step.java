@@ -18,7 +18,6 @@ public class TrabalhoComponentes02Step {
 
     @Quando("o usuário digitar no Nome")
     public void o_usuário_digitar_no_Nome() {
-        componentes.testarCadastro();
         componentes.testarNome();
 
     }

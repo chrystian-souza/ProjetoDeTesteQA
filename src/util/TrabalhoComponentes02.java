@@ -1,5 +1,6 @@
 package util;                                /* toda a lógica é feita aqui!*/
 
+import cucumber.runtime.junit.Assertions;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,21 +26,7 @@ public class TrabalhoComponentes02 {
         driver.manage().window().maximize();
 
         driver.get("file:///" + System.getProperty("user.dir") + "/Driver/componentes.html");
-
     }
-
-
-    public void validarCadastro() {
-        Assert.assertTrue(driver.findElement(By.id("elementosForm:cadastrar")).isSelected());
-        Assert.assertTrue(element.isDisplayed());
-    }
-
-    public void fecharPesquisa() {
-        driver.quit();
-
-    }
-
-
 
 
     public void testarNome() {
@@ -78,29 +65,31 @@ public class TrabalhoComponentes02 {
     }
 
     public void testarEscolaridade() {
-        element = driver.findElement(By.id("elementosForm:escolaridade"));
-        select.selectByValue("superior");
+        WebElement elementoSelect = driver.findElement(By.id("elementosForm:escolaridade"));
+        Select select = new Select(elementoSelect);
+        WebElement escolha = driver.findElement(By.cssSelector("option[value=superior]"));
+        select.selectByVisibleText("Superior");
+        Assert.assertTrue(escolha.isSelected());
 
     }
 
     public void validarEscolaridade() {
-        Select select = new Select(element);
-        boolean isSelected = select.getFirstSelectedOption().isSelected();
-        Assert.assertTrue(isSelected);
+        Assert.assertTrue(driver.findElement(By.cssSelector("option[value=superior")).isSelected());
 
     }
 
+
     public void testarEsporte() {
-        Select select = new Select(element);
-        element = driver.findElement(By.id("elementosForm:esporte"));
-        select.selectByIndex(1);
+        WebElement elementoSelect = driver.findElement(By.id("elementosForm:esportes"));
+        Select select = new Select(elementoSelect);
+        WebElement escolha = driver.findElement(By.cssSelector("option[value=futebol]"));
+        select.selectByVisibleText("Futebol");
+        Assert.assertTrue(escolha.isSelected());
 
     }
 
     public void validarEsporte() {
-        Select select = new Select(element);
-        boolean isSelected = select.getFirstSelectedOption().isSelected();
-        Assert.assertTrue(isSelected);
+        Assert.assertTrue(driver.findElement(By.cssSelector("option[value=futebol")).isSelected());
 
     }
 
@@ -119,6 +108,15 @@ public class TrabalhoComponentes02 {
     }
 
 
+    public void validarCadastro() {
+        Assert.assertTrue(driver.findElement(By.id("elementosForm:cadastrar")).isSelected());
+        Assert.assertTrue(element.isDisplayed());
+    }
+
+    public void fecharPesquisa() {
+        driver.quit();
+
+    }
 
 
 }
