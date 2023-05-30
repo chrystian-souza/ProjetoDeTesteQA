@@ -18,7 +18,6 @@ public class TrabalhoComponentes02Step {
 
     @Dado("que foi preenchido o formulario")
     public void que_foi_preenchido_o_formulario() {
-        componentes.preencherInformacoes();
         componentes.testarNome();
         componentes.testarSobrenome();
         componentes.testarSexo();
@@ -30,49 +29,42 @@ public class TrabalhoComponentes02Step {
 
     @Quando("o usuário clicar no botao de cadastrar")
     public void o_usuário_clicar_no_botao_de_cadastrar() {
-       componentes.
+        componentes.preencherInformacoes();
     }
 
     @Então("deve validar Nome Chrystian")
     public void deve_validar_Nome_Chrystian() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        componentes.validarNome();
     }
 
     @Então("deve validar Sobrenome Souza")
     public void deve_validar_Sobrenome_Souza() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        componentes.validarSobrenome();
     }
 
     @Então("deve validar Sexo radio")
     public void deve_validar_Sexo_radio() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        componentes.validarSexo();
     }
 
     @Então("deve validar Comida preferida checkbox")
     public void deve_validar_Comida_preferida_checkbox() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        componentes.validarComidaFavorita();
     }
 
     @Então("deve validar Escolaridade select")
     public void deve_validar_Escolaridade_select() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        componentes.validarEscolaridade();
     }
 
     @Então("deve validar Esporte select")
     public void deve_validar_Esporte_select() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        componentes.validarEsporte();
     }
 
     @Então("deve validar Sugestões Nada a declarar")
     public void deve_validar_Sugestões_Nada_a_declarar() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        componentes.validarSugestoes();
     }
 
 

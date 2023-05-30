@@ -52,7 +52,7 @@ public class TrabalhoComponentes02 {
     }
 
     public void validarSexo() {
-        Assert.assertTrue(driver.findElement(By.id("elementosForm:sexo:1")).isSelected());
+        Assert.assertTrue(driver.findElement(By.id("elementosForm:sexo:0")).isSelected());
     }
 
     public void testarComidaFavorita() {
@@ -66,7 +66,7 @@ public class TrabalhoComponentes02 {
     public void testarEscolaridade() {
         WebElement elementoweb = driver.findElement(By.id("elementosForm:escolaridade"));
         select = new Select(elementoweb);
-        select.deselectByIndex(4);
+        select.selectByIndex(4);
 
     }
 
