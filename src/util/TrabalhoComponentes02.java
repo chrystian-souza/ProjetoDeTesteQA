@@ -1,6 +1,5 @@
 package util;                                /* toda a lógica é feita aqui!*/
 
-import cucumber.runtime.junit.Assertions;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -65,16 +64,14 @@ public class TrabalhoComponentes02 {
     }
 
     public void testarEscolaridade() {
-        WebElement elementoSelect = driver.findElement(By.id("elementosForm:escolaridade"));
-        Select select = new Select(elementoSelect);
-        WebElement escolha = driver.findElement(By.cssSelector("option[value=superior]"));
-        select.selectByVisibleText("Superior");
-        Assert.assertTrue(escolha.isSelected());
+        WebElement elementoweb = driver.findElement(By.id("elementosForm:escolaridade"));
+        select = new Select(elementoweb);
+        select.deselectByIndex(4);
 
     }
 
     public void validarEscolaridade() {
-        Assert.assertTrue(driver.findElement(By.cssSelector("option[value=superior")).isSelected());
+        Assert.assertEquals("superior", driver.findElement(By.id("descEscolaridade")).findElement(By.tagName("span")).getText());
 
     }
 
@@ -102,16 +99,10 @@ public class TrabalhoComponentes02 {
     }
 
 
-    public void testarCadastro() {
-        element = driver.findElement(By.id("elementosForm:cadastrar"));
-        element.click();
+    public void preencherInformacoes() {
+      driver.findElement(By.id("elementosForm:cadastrar")).click();
     }
 
-
-    public void validarCadastro() {
-        Assert.assertTrue(driver.findElement(By.id("elementosForm:cadastrar")).isSelected());
-        Assert.assertTrue(element.isDisplayed());
-    }
 
     public void fecharPesquisa() {
         driver.quit();
