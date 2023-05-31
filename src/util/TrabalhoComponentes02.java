@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.Alert;
+
 
 
 public class TrabalhoComponentes02 {
@@ -105,12 +107,21 @@ public class TrabalhoComponentes02 {
     public void testarCadastro() {
         element = driver.findElement(By.id("elementosForm:cadastrar"));
         element.click();
+        Alert alerta = driver.switchTo().alert();
+        alerta.accept();
     }
 
 
     public void validarCadastro() {
-        Assert.assertTrue(driver.findElement(By.id("elementosForm:cadastrar")).isSelected());
-        Assert.assertTrue(element.isDisplayed());
+
+            Assert.assertTrue(driver.findElement(By.id("elementosForm:cadastrar")).isSelected());
+            Assert.assertTrue(element.isDisplayed());
+
+        }
+
+
+
+
     }
 
     public void fecharPesquisa() {
