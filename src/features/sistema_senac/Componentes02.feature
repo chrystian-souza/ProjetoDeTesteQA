@@ -23,7 +23,7 @@ Funcionalidade: Fazer o cadastro de usuários
 
 
   @Validar_Varios_Campos
-  Esquema do Cenario: Apos clicar em Cadastrar deve validar: campo nome, sobrenome, sexo, comida preferida, escolaridade, esporte, sugestão
+  Esquema do Cenario: Quando clicar em Cadastrar deve validar: campo nome, sobrenome, sexo, comida preferida, escolaridade, esporte, sugestão
     Dado que foi preenchido o formulario
     Quando o usuário clicar no botao de cadastrar
     Então deve validar <campo> <resultado>
