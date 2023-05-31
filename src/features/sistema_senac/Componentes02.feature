@@ -5,22 +5,6 @@ Funcionalidade: Fazer o cadastro de usuários
   Contexto:
     Dado que o usuário entrou na página Campo de Treinamento
 
-#  @Validar_Varios_Campos
-##  Esquema do Cenario: Apos clicar em Cadastrar deve validar: campo nome, sobrenome, sexo, comida preferida, escolaridade, esporte, sugestão
-##    Quando o usuário digitar no <campo>
-##    Então deve apresentar o <resultado>
-##    Exemplos:
-
-#      | campo            | resultado       |
-#      | Cadastrar        | onclick         |
-#      | Nome             | Chrystian       |
-#      | Sobrenome        | Souza           |
-#      | Sugestões        | Nada a declarar |
-#      | Sexo             | radio           |
-#      | Comida preferida | checkbox        |
-#      | Escolaridade     | select          |
-#      | Esporte          | select          |
-
 
   @Validar_Varios_Campos
   Esquema do Cenario: Quando clicar em Cadastrar deve validar: campo nome, sobrenome, sexo, comida preferida, escolaridade, esporte, sugestão
@@ -37,6 +21,29 @@ Funcionalidade: Fazer o cadastro de usuários
       | Escolaridade     | select          |
       | Esporte          | select          |
       | Sugestões        | Nada a declarar |
+
+  @Validar_Regras_De_Negócio
+  Contexto:
+    Dado que o usuário entrou na página Campo de Treinamento
+
+
+  Esquema do Cenário: Os campos Nome, Sobrenome e Sexo são obrigatórios
+    Dado que o usuário não preencheu <campo>
+    Quando clicar em Salvar
+    Então deve apresentar a mensagem de feedback informando que <campo> <mensagem>
+    Exemplos:
+      | campo                            | mensagem                 |
+      | o campo Nome                     | Nome eh obrigatorio      |
+      | o campo Sobrenome                | Sobrenome eh obrigatorio |
+      | o campo Sexo                     | Sexo eh obrigatorio      |
+      | os campos Nome e Sobrenome       | Nome eh obrigatorio      |
+      | os campos Nome e Sexo            | Nome eh obrigatorio      |
+      | os campos Sobrenome e Sexo       | Sobrenome eh obrigatorio |
+      | os campos Nome, Sobrenome e Sexo | Nome eh obrigatorio      |
+
+
+
+
 
 
 

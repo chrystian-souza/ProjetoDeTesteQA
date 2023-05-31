@@ -1,6 +1,7 @@
 package util;                                /* toda a lógica é feita aqui!*/
 
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,6 +37,13 @@ public class TrabalhoComponentes02 {
 
     }
 
+    public void validarNomeObr() {
+
+        Alert alerta = driver.switchTo().alert();
+        String alerta_texto = alerta.getText();
+        Assert.assertEquals("Nome é obrigatório", alerta_texto);
+    }
+
     public void testarSobrenome() {
         driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("Souza");
     }
@@ -44,6 +52,14 @@ public class TrabalhoComponentes02 {
         Assert.assertEquals("Souza", driver.findElement(By.id("descSobrenome")).findElement(By.tagName("span")).getText());
     }
 
+    public void validarSobrenomeObr() {
+
+        Alert alerta = driver.switchTo().alert();
+        String alerta_texto = alerta.getText();
+        Assert.assertEquals("Sobrenome é obrigatório", alerta_texto);
+    }
+
+
 
     public void testarSexo() {
         driver.findElement(By.id("elementosForm:sexo:0")).click();
@@ -51,8 +67,16 @@ public class TrabalhoComponentes02 {
     }
 
     public void validarSexo() {
-        Assert.assertEquals( "Masculino", driver.findElement(By.id("descSexo")).findElement(By.tagName("span")).getText());
+        Assert.assertEquals("Masculino", driver.findElement(By.id("descSexo")).findElement(By.tagName("span")).getText());
     }
+
+    public void validarSexoObr() {
+
+        Alert alerta = driver.switchTo().alert();
+        String alerta_texto = alerta.getText();
+        Assert.assertEquals("Sexo é obrigatório", alerta_texto);
+    }
+
 
     public void testarComidaFavorita() {
         driver.findElement(By.id("elementosForm:comidaFavorita:0")).click();

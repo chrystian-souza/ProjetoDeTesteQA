@@ -35,16 +35,19 @@ public class TrabalhoComponentes02Step {
     @Então("deve validar Nome Chrystian")
     public void deve_validar_Nome_Chrystian() {
         componentes.validarNome();
+        componentes.validarNomeObr();
     }
 
     @Então("deve validar Sobrenome Souza")
     public void deve_validar_Sobrenome_Souza() {
         componentes.validarSobrenome();
+        componentes.validarSobrenomeObr();
     }
 
     @Então("deve validar Sexo radio")
     public void deve_validar_Sexo_radio() {
         componentes.validarSexo();
+        componentes.validarSexoObr();
     }
 
     @Então("deve validar Comida preferida checkbox")
