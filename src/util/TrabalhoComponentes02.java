@@ -1,7 +1,7 @@
 package util;                                /* toda a lógica é feita aqui!*/
 
-import cucumber.runtime.junit.Assertions;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,8 +14,6 @@ import org.openqa.selenium.Alert;
 public class TrabalhoComponentes02 {
 
     private WebDriver driver;
-
-    private WebElement element;
 
     private Select select;
 
@@ -37,7 +35,15 @@ public class TrabalhoComponentes02 {
 
     public void validarNome() {
 
-        Assert.assertEquals("Chrystian", driver.findElement(By.id("elementosForm:nome")).getAttribute("value"));
+        Assert.assertEquals("Chrystian", driver.findElement(By.id("descNome")).findElement(By.tagName("span")).getText());
+
+    }
+
+    public void validarNomeObr() {
+
+        Alert alerta = driver.switchTo().alert();
+        String alerta_texto = alerta.getText();
+        Assert.assertEquals("Nome é obrigatório", alerta_texto);
     }
 
     public void testarSobrenome() {
@@ -45,53 +51,65 @@ public class TrabalhoComponentes02 {
     }
 
     public void validarSobrenome() {
-        Assert.assertEquals("Souza", driver.findElement(By.id("elementosForm:sobrenome")).getAttribute("value"));
+        Assert.assertEquals("Souza", driver.findElement(By.id("descSobrenome")).findElement(By.tagName("span")).getText());
+    }
+
+    public void validarSobrenomeObr() {
+
+        Alert alerta = driver.switchTo().alert();
+        String alerta_texto = alerta.getText();
+        Assert.assertEquals("Sobrenome é obrigatório", alerta_texto);
     }
 
 
+
     public void testarSexo() {
-        driver.findElement(By.id("elementosForm:sexo:1")).click();
+        driver.findElement(By.id("elementosForm:sexo:0")).click();
 
     }
 
     public void validarSexo() {
-        Assert.assertTrue(driver.findElement(By.id("elementosForm:sexo:1")).isSelected());
+        Assert.assertEquals("Masculino", driver.findElement(By.id("descSexo")).findElement(By.tagName("span")).getText());
     }
+
+    public void validarSexoObr() {
+
+        Alert alerta = driver.switchTo().alert();
+        String alerta_texto = alerta.getText();
+        Assert.assertEquals("Sexo é obrigatório", alerta_texto);
+    }
+
 
     public void testarComidaFavorita() {
         driver.findElement(By.id("elementosForm:comidaFavorita:0")).click();
     }
 
     public void validarComidaFavorita() {
-        Assert.assertTrue(driver.findElement(By.id("elementosForm:comidaFavorita:0")).isSelected());
+        Assert.assertEquals("Carne", driver.findElement(By.id("descComida")).findElement(By.tagName("span")).getText());
     }
 
     public void testarEscolaridade() {
-        WebElement elementoSelect = driver.findElement(By.id("elementosForm:escolaridade"));
-        Select select = new Select(elementoSelect);
-        WebElement escolha = driver.findElement(By.cssSelector("option[value=superior]"));
-        select.selectByVisibleText("Superior");
-        Assert.assertTrue(escolha.isSelected());
+        WebElement elementoweb = driver.findElement(By.id("elementosForm:escolaridade"));
+        select = new Select(elementoweb);
+        select.selectByIndex(4);
 
     }
 
     public void validarEscolaridade() {
-        Assert.assertTrue(driver.findElement(By.cssSelector("option[value=superior")).isSelected());
+        Assert.assertEquals("superior", driver.findElement(By.id("descEscolaridade")).findElement(By.tagName("span")).getText());
 
     }
 
 
     public void testarEsporte() {
-        WebElement elementoSelect = driver.findElement(By.id("elementosForm:esportes"));
-        Select select = new Select(elementoSelect);
-        WebElement escolha = driver.findElement(By.cssSelector("option[value=futebol]"));
-        select.selectByVisibleText("Futebol");
-        Assert.assertTrue(escolha.isSelected());
+        WebElement elementoweb = driver.findElement(By.id("elementosForm:esportes"));
+        select = new Select(elementoweb);
+        select.selectByValue("futebol");
 
     }
 
     public void validarEsporte() {
-        Assert.assertTrue(driver.findElement(By.cssSelector("option[value=futebol")).isSelected());
+        Assert.assertEquals("Futebol", driver.findElement(By.id("descEsportes")).findElement(By.tagName("span")).getText());
 
     }
 
@@ -100,10 +118,11 @@ public class TrabalhoComponentes02 {
     }
 
     public void validarSugestoes() {
-        Assert.assertEquals("Nada a declarar", driver.findElement(By.id("elementosForm:sugestoes")).getAttribute("value"));
+        Assert.assertEquals("Nada a declarar", driver.findElement(By.id("descSugestoes")).findElement(By.tagName("span")).getText());
     }
 
 
+<<<<<<< HEAD
     public void testarCadastro() {
         element = driver.findElement(By.id("elementosForm:cadastrar"));
         element.click();
@@ -124,6 +143,13 @@ public class TrabalhoComponentes02 {
 
     }
 
+=======
+    public void preencherInformacoes() {
+        driver.findElement(By.id("elementosForm:cadastrar")).click();
+    }
+
+
+>>>>>>> b90512a19ac214dd6bbdeb40fe4d6b732d75003b
     public void fecharPesquisa() {
         driver.quit();
 
