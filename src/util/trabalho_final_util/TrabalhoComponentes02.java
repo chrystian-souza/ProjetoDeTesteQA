@@ -1,4 +1,4 @@
-package util;                                /* toda a lógica é feita aqui!*/
+package util.trabalho_final_util;                                /* toda a lógica é feita aqui!*/
 
 import org.junit.Assert;
 import org.openqa.selenium.Alert;

@@ -40,7 +40,17 @@ Funcionalidade: Fazer o cadastro de usuário
       | os campos Nome, Sobrenome e Sexo | Nome eh obrigatorio      |
 
 
+  @TestGoogle
 
+  Contexto:
+    Dado que o usuário instanciou o chrome-driver
+
+
+  Cenário: Acessar Google
+    Dado que o usuário digitou o endereço do Google no navegador
+    E que o usuário digitou Olsen
+    Quando clicar em Entrar
+    Então deve apresentar o site da empresa Olsen
 
 
 
