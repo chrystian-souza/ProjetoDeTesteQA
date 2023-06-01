@@ -1,6 +1,6 @@
 #language:pt
 
-Funcionalidade: Fazer o cadastro de usuários
+Funcionalidade: Fazer o cadastro de usuário
 
   Contexto:
     Dado que o usuário entrou na página Campo de Treinamento
@@ -22,10 +22,8 @@ Funcionalidade: Fazer o cadastro de usuários
       | Esporte          | select          |
       | Sugestões        | Nada a declarar |
 
-  @Validar_Regras_De_Negócio
-  Contexto:
-    Dado que o usuário entrou na página Campo de Treinamento
 
+  @Validar_Regras_De_Negócio
 
   Esquema do Cenário: Os campos Nome, Sobrenome e Sexo são obrigatórios
     Dado que o usuário não preencheu <campo>
@@ -40,6 +38,7 @@ Funcionalidade: Fazer o cadastro de usuários
       | os campos Nome e Sexo            | Nome eh obrigatorio      |
       | os campos Sobrenome e Sexo       | Sobrenome eh obrigatorio |
       | os campos Nome, Sobrenome e Sexo | Nome eh obrigatorio      |
+
 
 
 

@@ -7,13 +7,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.Alert;
 
 
 
 public class TrabalhoComponentes02 {
 
     private WebDriver driver;
+    private WebElement element;
 
     private Select select;
 
@@ -43,7 +43,7 @@ public class TrabalhoComponentes02 {
 
         Alert alerta = driver.switchTo().alert();
         String alerta_texto = alerta.getText();
-        Assert.assertEquals("Nome é obrigatório", alerta_texto);
+        Assert.assertEquals("Nome eh obrigatorio", alerta_texto);
     }
 
     public void testarSobrenome() {
@@ -58,9 +58,8 @@ public class TrabalhoComponentes02 {
 
         Alert alerta = driver.switchTo().alert();
         String alerta_texto = alerta.getText();
-        Assert.assertEquals("Sobrenome é obrigatório", alerta_texto);
+        Assert.assertEquals("Sobrenome eh obrigatorio", alerta_texto);
     }
-
 
 
     public void testarSexo() {
@@ -76,7 +75,7 @@ public class TrabalhoComponentes02 {
 
         Alert alerta = driver.switchTo().alert();
         String alerta_texto = alerta.getText();
-        Assert.assertEquals("Sexo é obrigatório", alerta_texto);
+        Assert.assertEquals("Sexo eh obrigatorio", alerta_texto);
     }
 
 
@@ -122,7 +121,6 @@ public class TrabalhoComponentes02 {
     }
 
 
-<<<<<<< HEAD
     public void testarCadastro() {
         element = driver.findElement(By.id("elementosForm:cadastrar"));
         element.click();
@@ -133,27 +131,19 @@ public class TrabalhoComponentes02 {
 
     public void validarCadastro() {
 
-            Assert.assertTrue(driver.findElement(By.id("elementosForm:cadastrar")).isSelected());
-            Assert.assertTrue(element.isDisplayed());
+        Assert.assertTrue(driver.findElement(By.id("elementosForm:cadastrar")).isSelected());
+        Assert.assertTrue(element.isDisplayed());
 
+    }
+
+
+public void preencherInformacoes(){
+        driver.findElement(By.id("elementosForm:cadastrar")).click();
         }
 
-
-
-
-    }
-
-=======
-    public void preencherInformacoes() {
-        driver.findElement(By.id("elementosForm:cadastrar")).click();
-    }
-
-
->>>>>>> b90512a19ac214dd6bbdeb40fe4d6b732d75003b
-    public void fecharPesquisa() {
+public void fecharPesquisa(){
         driver.quit();
 
-    }
-
+        }
 
 }
