@@ -42,11 +42,8 @@ Funcionalidade: Fazer o cadastro de usuário
 
   @TestGoogle
 
-  Contexto:
-    Dado que o usuário instanciou o chrome-driver
+  Cenário: Acessar Google e entrar no site da empresa Olsen
 
-
-  Cenário: Acessar Google
     Dado que o usuário digitou o endereço do Google no navegador
     E que o usuário digitou Olsen
     Quando clicar em Entrar
